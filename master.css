@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  color: white;
+  background: black;
+}
+
+.num_random,
+.num_utente {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.num_random  div,
+.num_utente div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 900;
+  font-size: 23px;
+  background-color: red;
+  color: white;
+  border-radius: 13px;
+  width: 40px;
+  height: 40px;
+}
