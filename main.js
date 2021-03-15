@@ -18,6 +18,8 @@ $(document).ready(function() {
     var array_utente = [];
     var indovinati = $('.indovinati');
 
+
+
     innerRandom.html("");
     innerUtente.html("");
     indovinati.html("");
@@ -25,6 +27,9 @@ $(document).ready(function() {
     btnNuovaPartita.addClass('none');
     $('h1.ricorda_numeri').removeClass('none');
     btnPronto.removeClass('none');
+    $('h1.tuoi_numeri').addClass('none');
+    $('h1.punteggio').addClass('none');
+
 
 
     for (var i = 0; i < 5; i++) {
@@ -37,18 +42,20 @@ $(document).ready(function() {
       $('h1.ricorda_numeri').addClass('none');
       btnPronto.addClass('none');
       innerRandom.children('div').addClass('none');
+      $('.timer-wor').removeClass('none');
 
-      var time = 10;
-      for (var i = 10; i >= 0; i--) {
-        var interval = setInterval(function(){
-          $('body').html("<div>" + time + "</div>");
-          --time;
-        }, 1000);
-      }
+      var ir = 1;
+      var myInt = setInterval(function() {
+
+        document.querySelector('.timer-wor').innerHTML = ir;
+        ir++
+      }, 1000);
+
 
       setTimeout(function() {
 
-        clearInterval(interval);
+        $('.timer-wor').addClass('none');
+        clearInterval(myInt);
 
         var i = 0;
         while (i < 5) {
@@ -74,6 +81,7 @@ $(document).ready(function() {
 
 
 
+
           var count = 0;
           for (var i = 0; i < array_random.length; i++) {
             if (array_random[i] == array_utente[i]) {
@@ -82,14 +90,15 @@ $(document).ready(function() {
               count++;
             }
           }
+          if (count == 0) {
+            indovinati.append("<h2>Non ti sei ricordato nemeno un numero!</h2>");
+          };
 
-        }, 500)
+        }, 500);
 
-      }, 10000);
+      }, 11000);
 
     });
   });
-
-
 
 });

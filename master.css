@@ -26,6 +26,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 30px;
 }
 
 .num_random div,
@@ -43,4 +44,17 @@ button {
 
 .none {
   display: none;
+}
+
+.indovinati h2 {
+  color: red;
+}
+
+.timer-wor {
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  color: red;
 }
